@@ -380,7 +380,13 @@ def _download_artifact(artifact, models_root, overwrite):
                 "wheel_sha256": wheel_digest,
             })
         manifest_path = final_directory / f".manifest-{artifact_id}.json"
-        existing = [path for path in targets if path.exists()]
+        existing_conflicts = []
+        for path, item in zip(targets, enriched):
+            if path.exists():
+                expected_sha = item.get("sha256")
+                if expected_sha and _sha256(path).casefold() == expected_sha.casefold():
+                    continue
+                existing_conflicts.append(path)
         previous_manifest = None
         if manifest_path.is_file():
             try:
@@ -398,10 +404,10 @@ def _download_artifact(artifact, models_root, overwrite):
                 )
             if any(not isinstance(record, dict) or not isinstance(record.get("path"), str) for record in previous_manifest["files"]):
                 raise DownloadError(f"Existing artifact manifest has invalid file records: {manifest_path}")
-        if existing and not overwrite:
+        if existing_conflicts and not overwrite:
             raise DownloadError(
                 "Refusing to overwrite existing files: "
-                + ", ".join(str(path) for path in existing)
+                + ", ".join(str(path) for path in existing_conflicts)
                 + "; pass --overwrite after review."
             )
         final_directory.mkdir(parents=True, exist_ok=True)
