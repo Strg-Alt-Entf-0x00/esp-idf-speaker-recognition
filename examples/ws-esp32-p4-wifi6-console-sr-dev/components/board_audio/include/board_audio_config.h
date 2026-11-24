@@ -1,0 +1,27 @@
+#ifndef BOARD_AUDIO_CONFIG_H
+#define BOARD_AUDIO_CONFIG_H
+
+#define BOARD_AUDIO_SAMPLE_RATE              16000
+#define BOARD_AUDIO_BITS_PER_SAMPLE          16
+#define BOARD_AUDIO_I2S_READ_TIMEOUT_MS      1000
+
+#define BOARD_AUDIO_I2C_SCL_GPIO             8
+#define BOARD_AUDIO_I2C_SDA_GPIO             7
+#define BOARD_AUDIO_I2S_MCLK_GPIO            13
+#define BOARD_AUDIO_I2S_BCLK_GPIO            12
+#define BOARD_AUDIO_I2S_WS_GPIO              10
+#define BOARD_AUDIO_I2S_DIN_GPIO             11
+#define BOARD_AUDIO_I2S_DOUT_GPIO            9
+#define BOARD_AUDIO_PA_PIN_GPIO              53
+
+#define BOARD_AUDIO_INMP441_BCLK_GPIO        20
+#define BOARD_AUDIO_INMP441_WS_GPIO          21
+#define BOARD_AUDIO_INMP441_DIN_GPIO         22
+
+#define BOARD_AUDIO_DEFAULT_MIC_GAIN_DB      36
+#define BOARD_AUDIO_DEFAULT_SPEAKER_VOLUME   50
+
+#define BOARD_AUDIO_TX_RINGBUF_SIZE          32000
+#define BOARD_AUDIO_RX_RINGBUF_SIZE          32000
+
+#endif

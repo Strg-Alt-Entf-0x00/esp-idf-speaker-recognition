@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "project_id": "speaker-recognition",
+  "artifacts": [
+    {
+      "id": "ecapa-tdnn512",
+      "destination": ".",
+      "metadata": {
+        "publisher": "WeSpeaker / WeNet Community",
+        "model_card": "https://huggingface.co/Wespeaker/wespeaker-voxceleb-ecapa-tdnn512"
+      },
+      "source": {
+        "provider": "huggingface",
+        "repo_id": "Wespeaker/wespeaker-voxceleb-ecapa-tdnn512",
+        "revision": "89426e111abc9ffcc40279baf808e087693c6e9b",
+        "files": [
+          {
+            "id": "ecapa-tdnn512-pt",
+            "default": true,
+            "path": "avg_model.pt",
+            "destination": "ecapa_tdnn512.pt",
+            "sha256": "c5659521b311ce284751b7a7e8897e9287b7b9131db00ad58f35807b49515f6a"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tdnn-tiny",
+      "destination": ".",
+      "metadata": {
+        "publisher": "Strg-Alt-Entf-0x00 / Espressif Systems",
+        "model_card": "https://huggingface.co/Strg-Alt-Entf-0x00/Speaker-Recognition-ESP32-P4"
+      },
+      "source": {
+        "provider": "huggingface",
+        "repo_id": "Strg-Alt-Entf-0x00/Speaker-Recognition-ESP32-P4",
+        "revision": "322c594a3bbe2d55bf3d21eaf382d389d91e22d5",
+        "files": [
+          {
+            "id": "tdnn-tiny-pth",
+            "default": true,
+            "path": "tdnn_tiny.pth",
+            "destination": "tdnn_tiny.pth",
+            "sha256": "fe1a106d8e97a22206dbe49e65909c1993c7abef8415008c4be9df5017b907f6"
+          }
+        ]
+      }
+    }
+  ]
+}

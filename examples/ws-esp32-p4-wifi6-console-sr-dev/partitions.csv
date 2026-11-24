@@ -1,0 +1,8 @@
+# ESP32-P4 Console Speaker Recognition Partition Table (32MB Flash)
+# Name,       Type, SubType,  Offset,     Size,       Flags
+nvs,          data, nvs,      0x9000,     24K,
+phy_init,     data, phy,      0xf000,     4K,
+factory,      app,  factory,  0x10000,    4M,
+model,        data, 0x50,     0x500000,   8M,
+model_rt,     data, 0x51,     0xd00000,   4M,
+storage,      data, fat,      0x1100000,  14M,

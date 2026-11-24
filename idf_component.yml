@@ -1,0 +1,10 @@
+version: "1.1.0"
+description: "Native SOTA Dual-Profile Speaker Recognition & Verification for ESP-IDF (WeSpeaker ECAPA-TDNN512 & TDNN-Tiny)"
+url: "https://github.com/Strg-Alt-Entf-0x00/esp-idf-speaker-recognition"
+license: "PolyForm-Noncommercial-1.0.0"
+targets:
+  - esp32p4
+
+dependencies:
+  espressif/esp-dsp:
+    version: "^1.8.2"
